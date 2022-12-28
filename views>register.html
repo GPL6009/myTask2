@@ -17,7 +17,7 @@
             <a class="navbar-brand" href="/login/login" style="margin-left:10%;" >login</a>
         </nav>
         <div class="nav justify-content-center">
-            <div class="card nav justify-content-center" style="width: 22rem; margin-top:7%;">
+            <div class="card nav justify-content-center" style="width: 24rem; margin-top:7%;">
                 <div class="card-body text-center">
 
                     <label for="first_name"> Enter First Name: </label>
@@ -212,7 +212,7 @@ $('#email').on("change", function(){
                    //var password = $("#password").val();
                     $.ajax({
                         method: "post",
-                        url: "/register",
+                        url: "http://localhost:8080/register/register",
                         dataType: "JSON",
                         data: { 'email': email},
                         success: function (response) {
