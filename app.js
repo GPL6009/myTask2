@@ -6,10 +6,12 @@ const path = require('path');
 const router = express.Router();
 
 var app = express();
-// const adminRoutes = require('./routes/demo');
-const adminRoutes = require('./routes/admin');
+
+//const emailVerify = require('./routes/emailVerify');
+//const adminRoutes = require('./routes/demo');
+const userRoutes = require('./routes/user');
 const loginRoutes = require('./routes/login');
-const emailVerify = require('./routes/emailVerify');
+
 
 
 //app.set('view engine','ejs');
@@ -23,12 +25,13 @@ app.use(bodyParser.json());
 app.use('/jquery',express.static(__dirname+'/node_modules/jquery/dist/'));
 
 
-app.use("/register",emailVerify);
+//app.use("/register",emailVerify);
+app.use("/register",userRoutes);
 app.use("/login",loginRoutes);
 
 
 
-app.use(adminRoutes);
+app.use(userRoutes);
 
 
 
